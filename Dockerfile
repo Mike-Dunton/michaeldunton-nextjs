@@ -10,6 +10,8 @@ FROM node:14-alpine AS builder
 WORKDIR /app
 COPY . .
 COPY --from=dependencies /app/node_modules ./node_modules
+ARG GA_ID
+ENV NEXT_PUBLIC_GOOGLE_ANALYTICS=$GA_ID
 RUN npm run build
 
 # Production image, copy all the files and run next
