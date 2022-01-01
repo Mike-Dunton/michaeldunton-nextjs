@@ -8,7 +8,7 @@ import {faTwitter, faLinkedin, faGithub} from "@fortawesome/free-brands-svg-icon
 
 const name = 'Michael Dunton'
 export const siteTitle = 'michaeldunton.com'
-export default function Layout({children, home}) {
+export default function Layout({children, home, tool}) {
 
     return (
         <div>
@@ -58,20 +58,21 @@ export default function Layout({children, home}) {
                 </div>
 
             </nav>
-
-            <header className="w-full container mx-auto pt-2">
-                <div className="flex items-center flex-col text-lg no-underline pr-6">
-                <Image
-                    priority
-                    src="/profile.jpg"
-                    className="rounded-full w-64 h-64 object-cover"
-                    height={128}
-                    width={128}
-                    alt={name}
-                />
-                <h1 className="text-2xl font-semibold md:text-4xl">{name}</h1>
-                </div>
-            </header>
+            {!tool && (
+                <header className="w-full container mx-auto pt-2">
+                    <div className="flex items-center flex-col text-lg no-underline pr-6">
+                    <Image
+                        priority
+                        src="/profile.jpg"
+                        className="rounded-full w-64 h-64 object-cover"
+                        height={128}
+                        width={128}
+                        alt={name}
+                    />
+                    <h1 className="text-2xl font-semibold md:text-4xl">{name}</h1>
+                    </div>
+                </header>
+            )}
 
             <main>{children}</main>
             {!home && (

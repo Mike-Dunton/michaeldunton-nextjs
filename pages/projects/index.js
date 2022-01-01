@@ -9,7 +9,7 @@ export default function Projects({allProjectsData}) {
     return (
         <Layout projects>
             <Head>
-                <title>{siteTitle}</title>
+                <title>{siteTitle} | Projects</title>
             </Head>
             <div className="container mx-auto flex flex-wrap py-6">
                 <section className="w-full grid md:grid-cols-3 gap-6 ">
